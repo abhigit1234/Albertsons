@@ -136,7 +136,7 @@ public class demo {
 		driver = new ChromeDriver();
 		driver.get("http://localhost/opencart/upload/");
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "google");
+		assertEquals(driver.getTitle(), "Your Store");
 
 	}
 }
