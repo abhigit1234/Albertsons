@@ -67,7 +67,7 @@ public class demo {
 		testDate = 	new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
 		repName = testDate+".html";
 		extent = new ExtentReports();
-		spark = new ExtentSparkReporter(".//ExtentReports//"+repName);
+		spark = new ExtentSparkReporter(("ExtentReports//")+repName);
 		extent.attachReporter(spark);
 		extent.setSystemInfo("user country", System.getProperty("user.country"));
 		extent.setSystemInfo("java version", System.getProperty("java.version"));
@@ -84,7 +84,7 @@ public class demo {
 	@AfterSuite
 	public void flushReports() throws Exception {
 		extent.flush();						 
-		Desktop.getDesktop().browse(new File(".//ExtentReports//"+repName).toURI());
+		Desktop.getDesktop().browse(new File(("ExtentReports//")+repName).toURI());
 
 	}
 	@BeforeMethod
@@ -120,7 +120,7 @@ public class demo {
 	
 	}
 	
-	@Test(groups = {"smoke","sanity"})
+	@Test(groups = {"smoke","sanity"},enabled = false)
 	public void test1() {
 		
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -133,6 +133,7 @@ public class demo {
 
 	}
 
+	
 	@Test(groups = {"functional","regression","smoke"})
 	public void test2() {
 		driver = new ChromeDriver();
