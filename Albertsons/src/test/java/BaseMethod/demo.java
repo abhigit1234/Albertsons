@@ -63,9 +63,9 @@ public class demo {
 	@BeforeSuite
 	public void initialiseReports() {
 		testDate = 	new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
-		repName = ".html";
+		repName = testDate+".html";
 		extent = new ExtentReports();
-		spark = new ExtentSparkReporter("target/extent.html");
+		spark = new ExtentSparkReporter(".\\ExtentReports\\"+repName);
 		extent.attachReporter(spark);
 		extent.setSystemInfo("user country", System.getProperty("user.country"));
 		extent.setSystemInfo("java version", System.getProperty("java.version"));
@@ -82,7 +82,7 @@ public class demo {
 	@AfterSuite
 	public void flushReports() throws Exception {
 		extent.flush();						 
-		Desktop.getDesktop().browse(new File("target/extent.html").toURI());
+		Desktop.getDesktop().browse(new File(".\\ExtentReports\\"+repName).toURI());
 
 	}
 	@BeforeMethod
