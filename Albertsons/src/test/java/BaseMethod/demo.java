@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -47,6 +48,7 @@ public class demo {
 	@BeforeTest
 	public void initialiseBrowser(ITestContext context) {
 		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		extenttest =	extent.createTest(context.getName());
 		Capabilities cap =	((RemoteWebDriver)driver).getCapabilities();
 		String device =	cap.getBrowserName()+" "+cap.getBrowserVersion().substring(0, cap.getBrowserVersion().indexOf("."));
@@ -65,7 +67,7 @@ public class demo {
 		testDate = 	new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
 		repName = testDate+".html";
 		extent = new ExtentReports();
-		spark = new ExtentSparkReporter(".\\ExtentReports\\"+repName);
+		spark = new ExtentSparkReporter(".//ExtentReports//"+repName);
 		extent.attachReporter(spark);
 		extent.setSystemInfo("user country", System.getProperty("user.country"));
 		extent.setSystemInfo("java version", System.getProperty("java.version"));
@@ -82,7 +84,7 @@ public class demo {
 	@AfterSuite
 	public void flushReports() throws Exception {
 		extent.flush();						 
-		Desktop.getDesktop().browse(new File(".\\ExtentReports\\"+repName).toURI());
+		Desktop.getDesktop().browse(new File(".//ExtentReports//"+repName).toURI());
 
 	}
 	@BeforeMethod
@@ -120,13 +122,13 @@ public class demo {
 	
 	@Test(groups = {"smoke","sanity"})
 	public void test1() {
-
-		driver.get("http://localhost/opencart/upload/admin/");
-		driver.findElement(By.id("input-username")).sendKeys("admin");
-		driver.findElement(By.id("input-password")).sendKeys("admin");
+		
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.findElement(By.name("username")).sendKeys("Admin");
+		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "Administration");
+		assertEquals(driver.getTitle(), "OrangeHRM");
 		driver.close();
 
 	}
@@ -134,9 +136,9 @@ public class demo {
 	@Test(groups = {"functional","regression","smoke"})
 	public void test2() {
 		driver = new ChromeDriver();
-		driver.get("http://localhost/opencart/upload/");
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "Your Store");
+		assertEquals(driver.getTitle(), "OrangeHRM");
 
 	}
 }

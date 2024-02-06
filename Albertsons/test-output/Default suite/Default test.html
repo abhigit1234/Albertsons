@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/2</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 06 10:17:50 IST 2024</td>
+<td>Started on:</td><td>Tue Feb 06 21:30:53 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (87 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10150 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,24 +76,40 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='BaseMethod.demo.initialiseReports()'><b>initialiseReports</b><br>Test class: BaseMethod.demo</td>
-<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 38: user.dir.\ExtentReports\06\02\2024, 10:17.html
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
-	at java.base/java.io.File.toPath(File.java:2401)
-	at com.aventstack.extentreports.reporter.AbstractFileReporter.&lt;init&gt;(AbstractFileReporter.java:40)
-	at com.aventstack.extentreports.reporter.ExtentSparkReporter.&lt;init&gt;(ExtentSparkReporter.java:51)
-	at BaseMethod.demo.initialiseReports(demo.java:68)
+<td title='BaseMethod.demo.tearDown()'><b>tearDown</b><br>Test class: BaseMethod.demo</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.12.1&apos;, revision: &apos;8e34639b11&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c049f8350d804f31b6b106eb6deb0269, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.140, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50296}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50296/devtoo..., se:cdpVersion: 121.0.6167.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c049f8350d804f31b6b106eb6deb0269
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:679)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:409)
+	at BaseMethod.demo.tearDown(demo.java:62)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
 	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
 	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:663)
+	at org.testng.TestRunner.afterRun(TestRunner.java:933)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -104,24 +120,40 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace409962262", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace409962262'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 38: user.dir.\ExtentReports\06\02\2024, 10:17.html
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
-	at java.base/java.io.File.toPath(File.java:2401)
-	at com.aventstack.extentreports.reporter.AbstractFileReporter.&lt;init&gt;(AbstractFileReporter.java:40)
-	at com.aventstack.extentreports.reporter.ExtentSparkReporter.&lt;init&gt;(ExtentSparkReporter.java:51)
-	at BaseMethod.demo.initialiseReports(demo.java:68)
+</pre></div><a href='#' onClick='toggleBox("stack-trace551056181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace551056181'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.12.1&apos;, revision: &apos;8e34639b11&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c049f8350d804f31b6b106eb6deb0269, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.140, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50296}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50296/devtoo..., se:cdpVersion: 121.0.6167.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c049f8350d804f31b6b106eb6deb0269
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:679)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:409)
+	at BaseMethod.demo.tearDown(demo.java:62)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
 	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
 	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:663)
+	at org.testng.TestRunner.afterRun(TestRunner.java:933)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -134,49 +166,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
+<td>BaseMethod.demo@41a2befb</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='BaseMethod.demo.tearDown()'><b>tearDown</b><br>Test class: BaseMethod.demo</td>
-<td></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-<tr>
-<td title='BaseMethod.demo.initialiseBrowser()'><b>initialiseBrowser</b><br>Test class: BaseMethod.demo</td>
-<td></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-<tr>
-<td title='BaseMethod.demo.initialiseBrowser()'><b>initialiseBrowser</b><br>Test class: BaseMethod.demo</td>
-<td></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-<tr>
-<td title='BaseMethod.demo.getStatus()'><b>getStatus</b><br>Test class: BaseMethod.demo</td>
-<td></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-<tr>
-<td title='BaseMethod.demo.tearDown()'><b>tearDown</b><br>Test class: BaseMethod.demo</td>
-<td></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-<tr>
-<td title='BaseMethod.demo.getGroupStatus()'><b>getGroupStatus</b><br>Test class: BaseMethod.demo</td>
-<td></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -185,124 +178,9 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='BaseMethod.demo.test1()'><b>test1</b><br>Test class: BaseMethod.demo</td>
-<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 38: user.dir.\ExtentReports\06\02\2024, 10:17.html
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
-	at java.base/java.io.File.toPath(File.java:2401)
-	at com.aventstack.extentreports.reporter.AbstractFileReporter.&lt;init&gt;(AbstractFileReporter.java:40)
-	at com.aventstack.extentreports.reporter.ExtentSparkReporter.&lt;init&gt;(ExtentSparkReporter.java:51)
-	at BaseMethod.demo.initialiseReports(demo.java:68)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1551945522", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1551945522'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 38: user.dir.\ExtentReports\06\02\2024, 10:17.html
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
-	at java.base/java.io.File.toPath(File.java:2401)
-	at com.aventstack.extentreports.reporter.AbstractFileReporter.&lt;init&gt;(AbstractFileReporter.java:40)
-	at com.aventstack.extentreports.reporter.ExtentSparkReporter.&lt;init&gt;(ExtentSparkReporter.java:51)
-	at BaseMethod.demo.initialiseReports(demo.java:68)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
-<tr>
-<td title='BaseMethod.demo.test2()'><b>test2</b><br>Test class: BaseMethod.demo</td>
-<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 38: user.dir.\ExtentReports\06\02\2024, 10:17.html
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
-	at java.base/java.io.File.toPath(File.java:2401)
-	at com.aventstack.extentreports.reporter.AbstractFileReporter.&lt;init&gt;(AbstractFileReporter.java:40)
-	at com.aventstack.extentreports.reporter.ExtentSparkReporter.&lt;init&gt;(ExtentSparkReporter.java:51)
-	at BaseMethod.demo.initialiseReports(demo.java:68)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1947185929", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1947185929'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 38: user.dir.\ExtentReports\06\02\2024, 10:17.html
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
-	at java.base/java.io.File.toPath(File.java:2401)
-	at com.aventstack.extentreports.reporter.AbstractFileReporter.&lt;init&gt;(AbstractFileReporter.java:40)
-	at com.aventstack.extentreports.reporter.ExtentSparkReporter.&lt;init&gt;(ExtentSparkReporter.java:51)
-	at BaseMethod.demo.initialiseReports(demo.java:68)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>BaseMethod.demo@5e5d171f</td></tr>
+<td></td>
+<td>6</td>
+<td>BaseMethod.demo@41a2befb</td></tr>
 </table><p>
 </body>
 </html>

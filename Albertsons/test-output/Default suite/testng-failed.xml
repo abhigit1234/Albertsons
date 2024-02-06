@@ -5,12 +5,11 @@
     <classes>
       <class name="BaseMethod.demo">
         <methods>
-          <include name="test2"/>
           <include name="initialiseReports"/>
           <include name="test1"/>
           <include name="initialiseBrowser"/>
-          <include name="tearDown"/>
           <include name="flushReports"/>
+          <include name="tearDown"/>
           <include name="getStatus"/>
           <include name="getGroupStatus"/>
         </methods>
