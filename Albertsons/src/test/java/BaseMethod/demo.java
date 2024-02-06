@@ -120,7 +120,7 @@ public class demo {
 	
 	}
 	
-	@Test(groups = {"smoke","sanity"},enabled = false)
+	@Test(groups = {"smoke","sanity"})
 	public void test1() {
 		
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
