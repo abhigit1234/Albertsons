@@ -141,6 +141,7 @@ public class demo {
 		System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "OrangeHRM");
 		System.out.println("hello");
+		System.out.println("hello");
 		
 	}
 }
