@@ -45,13 +45,15 @@ public class demo {
 	static ExtentTest extenttest;
 	static String testDate;
 	static String repName;
+
 	@BeforeTest
 	public void initialiseBrowser(ITestContext context) {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		extenttest =	extent.createTest(context.getName());
-		Capabilities cap =	((RemoteWebDriver)driver).getCapabilities();
-		String device =	cap.getBrowserName()+" "+cap.getBrowserVersion().substring(0, cap.getBrowserVersion().indexOf("."));
+		extenttest = extent.createTest(context.getName());
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+		String device = cap.getBrowserName() + " "
+				+ cap.getBrowserVersion().substring(0, cap.getBrowserVersion().indexOf("."));
 		String author = context.getCurrentXmlTest().getName();
 		extenttest.assignAuthor(author);
 		extenttest.assignDevice(device);
@@ -64,10 +66,10 @@ public class demo {
 
 	@BeforeSuite
 	public void initialiseReports() {
-		testDate = 	new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
-		repName = testDate+".html";
+		testDate = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
+		repName = testDate + ".html";
 		extent = new ExtentReports();
-		spark = new ExtentSparkReporter(("ExtentReports//")+repName);
+		spark = new ExtentSparkReporter(("ExtentReports//") + repName);
 		extent.attachReporter(spark);
 		extent.setSystemInfo("user country", System.getProperty("user.country"));
 		extent.setSystemInfo("java version", System.getProperty("java.version"));
@@ -78,51 +80,53 @@ public class demo {
 		spark.config().setReportName("final test run");
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setTimeStampFormat("dd/MMM/yyyy");
-	
+
 	}
 
 	@AfterSuite
 	public void flushReports() throws Exception {
-		extent.flush();						 
-		Desktop.getDesktop().browse(new File(("ExtentReports//")+repName).toURI());
+		extent.flush();
+		Desktop.getDesktop().browse(new File(("ExtentReports//") + repName).toURI());
 
 	}
+
 	@BeforeMethod
 	public void getStatus(Method m) {
-	extenttest.assignCategory(m.getAnnotation(Test.class).groups());
+		extenttest.assignCategory(m.getAnnotation(Test.class).groups());
 	}
+
 	@AfterMethod
 	public void getGroupStatus(Method m, ITestResult result) {
-		if(result.getStatus()==ITestResult.FAILURE) {
-		String path =	capture(result.getTestContext().getName()+" "+result.getMethod().getMethodName()+".png");
-		extenttest.addScreenCaptureFromPath(path);
-		extenttest.info(result.getThrowable());
-		}else if(result.getStatus()==ITestResult.SUCCESS) {
-			extenttest.pass(m.getName()+"is passed ");
+		if (result.getStatus() == ITestResult.FAILURE) {
+			String path = capture(
+					result.getTestContext().getName() + " " + result.getMethod().getMethodName() + ".png");
+			extenttest.addScreenCaptureFromPath(path);
+			extenttest.info(result.getThrowable());
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			extenttest.pass(m.getName() + "is passed ");
 		}
 	}
-	
-	
+
 	public String capture(String fileName) {
 		LocalDateTime ldt = LocalDateTime.now();
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMMyyyyHHmmss");
 		String date = ldt.format(dtf);
-		TakesScreenshot ts = (TakesScreenshot)driver;
-		File source =	ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File(System.getProperty("user.dir")+date+fileName);
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File dest = new File(System.getProperty("user.dir") + date + fileName);
 		try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {
 			e.printStackTrace();
-		
-		}return dest.getAbsolutePath();
-		
-	
+
+		}
+		return dest.getAbsolutePath();
+
 	}
-	
-	@Test(groups = {"smoke","sanity"})
+
+	@Test(groups = { "smoke", "sanity" })
 	public void test1() {
-		
+
 		driver.get("http://localhost/opencart/upload/admin/");
 		driver.findElement(By.id("input-username")).sendKeys("admin");
 		driver.findElement(By.id("input-password")).sendKeys("admin");
@@ -133,18 +137,12 @@ public class demo {
 
 	}
 
-	
-	@Test(groups = {"functional","regression","smoke"})
+	@Test(groups = { "functional", "regression", "smoke" })
 	public void test2() {
 		driver = new ChromeDriver();
 		driver.get("http://localhost/opencart/upload/admin/");
 		System.out.println(driver.getTitle());
-
-		assertEquals(driver.getTitle(), "Administration");
-		System.out.println("hi");
-
 		assertEquals(driver.getTitle(), "OrangeHRM");
 
-		
 	}
 }
