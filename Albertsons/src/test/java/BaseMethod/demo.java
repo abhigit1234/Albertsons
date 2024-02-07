@@ -128,7 +128,7 @@ public class demo {
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "OrangeHRMM");
+		assertEquals(driver.getTitle(), "OrangeHRM");
 		driver.close();
 
 	}
