@@ -140,7 +140,7 @@ public class demo {
 		driver.get("http://localhost/opencart/upload/admin/");
 		System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "Administration");
-		
+		System.out.println("hi");
 		
 	}
 }
