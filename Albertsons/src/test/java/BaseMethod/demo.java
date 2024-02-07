@@ -139,8 +139,12 @@ public class demo {
 		driver = new ChromeDriver();
 		driver.get("http://localhost/opencart/upload/admin/");
 		System.out.println(driver.getTitle());
+<<<<<<< HEAD
 		assertEquals(driver.getTitle(), "Administration");
 		System.out.println("hi");
+=======
+		assertEquals(driver.getTitle(), "OrangeHRM");
+>>>>>>> 7c3ff6ac334c25adfede662a8a24cbfe3c1f6b98
 		
 	}
 }
