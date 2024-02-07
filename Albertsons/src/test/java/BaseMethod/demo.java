@@ -145,4 +145,12 @@ public class demo {
 		assertEquals(driver.getTitle(), "Administration");
 
 	}
+	@Test(groups = { "functional", "manual", "sanity" })
+	public void test3() {
+		driver = new ChromeDriver();
+		driver.get("http://www.google.com");
+		System.out.println(driver.getTitle());
+		assertEquals(driver.getTitle(), "Administration");
+
+	}
 }
