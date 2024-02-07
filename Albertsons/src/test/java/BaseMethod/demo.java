@@ -148,7 +148,7 @@ public class demo {
 		driver = new ChromeDriver();
 		driver.get("http://www.google.com");
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "Administration");
+		assertEquals(driver.getTitle(), "Google");
 
 	}
 }
