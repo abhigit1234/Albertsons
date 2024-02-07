@@ -123,12 +123,12 @@ public class demo {
 	@Test(groups = {"smoke","sanity"})
 	public void test1() {
 		
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.get("http://localhost/opencart/upload/admin/");
+		driver.findElement(By.id("input-username")).sendKeys("admin");
+		driver.findElement(By.id("input-password")).sendKeys("admin");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "OrangeHRM");
+		assertEquals(driver.getTitle(), "Administration");
 		driver.close();
 
 	}
@@ -137,10 +137,10 @@ public class demo {
 	@Test(groups = {"functional","regression","smoke"})
 	public void test2() {
 		driver = new ChromeDriver();
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.get("http://localhost/opencart/upload/admin/");
 		System.out.println(driver.getTitle());
-		assertEquals(driver.getTitle(), "OrangeHRM");
-		System.out.println("hello");
+		assertEquals(driver.getTitle(), "Administration");
+		
 		
 	}
 }
