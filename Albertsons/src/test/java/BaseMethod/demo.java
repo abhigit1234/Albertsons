@@ -140,8 +140,6 @@ public class demo {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "OrangeHRM");
-		System.out.println("hello");
-		System.out.println("hello");
 		
 	}
 }
